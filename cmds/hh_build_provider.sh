@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set fileformat=dos
+
 f_build_huaweicloud(){
   echo -e "\033[0;36;40m[HuaweiCloud Provider] - Start formatting the code\033[0m"
   make fmt
