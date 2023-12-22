@@ -1,6 +1,4 @@
-#!/bin/bash
-
-set fileformat=dos
+#!/usr/bin/env bash
 
 # 进入build完华为provider后的目录
 f_cd_hw(){

@@ -1,6 +1,4 @@
-#!/bin/bash
-
-set fileformat=unix
+#!/usr/bin/env bash
 
 # 系统开头部分
 f_index(){

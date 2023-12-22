@@ -1,8 +1,7 @@
-#!/bin/bash
-
-set fileformat=dos
+#!/usr/bin/env bash
 
 f_build_huaweicloud(){
+  echo
   echo -e "\033[0;36;40m[HuaweiCloud Provider] - Start formatting the code\033[0m"
   make fmt
 
@@ -19,6 +18,7 @@ f_build_huaweicloud(){
 }
 
 f_build_flexibleengine(){
+  echo
   echo -e "\033[0;36;40m[FlexibleEngineCloud Provider] - Start formatting the code\033[0m"
   make fmt
 
@@ -35,6 +35,7 @@ f_build_flexibleengine(){
 }
 
 f_build_g42cloud(){
+  echo
   echo -e "\033[0;36;40m[G42Cloud Provider] - Start formatting the code\033[0m"
   make fmt
 
