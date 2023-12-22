@@ -1,16 +1,18 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
-project_path="/mnt/d/DOCS/study/hh-system"
-
-source $project_path/main/index.sh
-
-source $project_path/cmds/hh_build_provider.sh
-source $project_path/cmds/hh_cd_directory.sh
-source $project_path/cmds/hh_others.sh
-source $project_path/cmds/hh_terraform.sh
+source $hh_project_path/main/index.sh
+source $hh_project_path/cmds/hh_build_provider.sh
+source $hh_project_path/cmds/hh_cd_directory.sh
+source $hh_project_path/cmds/hh_others.sh
+source $hh_project_path/cmds/hh_terraform.sh
 
 # 入口
 f_index
+
+# 系统初始化
+f_hh_init(){
+  for file in `find $hh_project_path -name *.sh -type f`; do vi $file -c 'set ff=unix | wq!'; done
+}
 
 operate=${1}
 if [[ -n ${operate} ]]
@@ -44,6 +46,7 @@ case $operate in
   'play')   f_weekend_play;;
 
   # 公共
+  'init') f_hh_init;;
   '');;
   *) echo "没有这个命令：hh $operate"
 esac

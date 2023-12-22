@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+:<<EOF
 directory=${1}
 echo $directory
 
@@ -13,3 +14,4 @@ then
 else
   for file in `find $directory -name *.sh -type f`; do vi $file -c 'set ff=unix | wq!'; done ;
 fi
+EOF
