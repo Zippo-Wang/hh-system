@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# 系统初始化
+f_hh_init(){
+  for file in `find $hh_project_path -name *.sh -type f`; do vi $file -c 'set ff=unix | wq!'; done
+}
+
 source $hh_project_path/main/index.sh
 source $hh_project_path/cmds/hh_build_provider.sh
 source $hh_project_path/cmds/hh_cd_directory.sh
@@ -8,11 +13,6 @@ source $hh_project_path/cmds/hh_terraform.sh
 
 # 入口
 f_index
-
-# 系统初始化
-f_hh_init(){
-  for file in `find $hh_project_path -name *.sh -type f`; do vi $file -c 'set ff=unix | wq!'; done
-}
 
 operate=${1}
 if [[ -n ${operate} ]]
@@ -46,7 +46,7 @@ case $operate in
   'play')   f_weekend_play;;
 
   # 公共
-  'init') f_hh_init;;
+  'init') f_hh_init; echo 'hh-system have finished init successfully!';;
   '');;
   *) echo "没有这个命令：hh $operate"
 esac
