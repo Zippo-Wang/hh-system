@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set fileformat=dos
+
 # 进入build完华为provider后的目录
 f_cd_hw(){
 directory='/home/huawei/.terraform.d/plugins/local-registry/huaweicloud/huaweicloud/0.0.1/linux_amd64'
