@@ -52,5 +52,5 @@ case $operate in
   # 公共
   'init') f_hh_init;;
   '');;
-  *) echo "没有这个命令：hh $operate"
+  *) echo "没有这个命令：hh $@"
 esac
