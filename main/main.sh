@@ -12,13 +12,13 @@ source $hh_project_path/cmds/hh_others.sh
 source $hh_project_path/cmds/hh_terraform.sh
 
 # 入口
-f_index
-
 operate=${1}
 if [[ -n ${operate} ]]
 then
-  printf '+---%.0s' {1..21}
   printf '\n\033[0;33m执行结果\033[0;33;5m🔊\033[0m\033[0m:'
+  echo
+else
+  f_index
 fi
 
 case $operate in
