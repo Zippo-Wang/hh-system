@@ -3,13 +3,14 @@
 # 系统初始化
 f_hh_init(){
   for file in `find $hh_project_path -name *.sh -type f`; do vi $file -c 'set ff=unix | wq!'; done
+  echo 'hh-system have finished init successfully!'
 }
 
 source $hh_project_path/main/index.sh
-source $hh_project_path/cmds/hh_build_provider.sh
-source $hh_project_path/cmds/hh_cd_directory.sh
-source $hh_project_path/cmds/hh_others.sh
-source $hh_project_path/cmds/hh_terraform.sh
+source $hh_project_path/cmds/build_provider.sh
+source $hh_project_path/cmds/cd_directory.sh
+source $hh_project_path/cmds/others.sh
+source $hh_project_path/cmds/terraform.sh
 
 # 入口
 operate=${1}
@@ -35,18 +36,21 @@ case $operate in
   'b-gg') f_build_g42cloud;;
 
   # [3]terraform
-  'tf-int') f_tf_init;;
-  'tf-pl')  f_tf_plan;;
-  'tf-pp')  f_tf_apply;;
+#  'tf-int') f_tf_init;;
+#  'tf-pl')  f_tf_plan;;
+#  'tf-pp')  f_tf_apply;;
 
-  # [4]其他
-  'cms')    f_christmas;;
-  'monkey') f_monkey;;
-  'meinv')  f_beautiful_girl;;
-  'play')   f_weekend_play;;
+  # [3]其他
+  'cms')     f_christmas;;
+  'monkey')  f_monkey;;
+  'meinv')   f_beautiful_girl;;
+
+  # [4]系统命令
+  '-help')   f_help;;
+  '-charge') f_charge;;
 
   # 公共
-  'init') f_hh_init; echo 'hh-system have finished init successfully!';;
+  'init') f_hh_init;;
   '');;
   *) echo "没有这个命令：hh $operate"
 esac

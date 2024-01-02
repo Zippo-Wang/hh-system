@@ -47,6 +47,27 @@ f_beautiful_girl(){
   '
 }
 
+f_help(){
+  printf "【一】Usage: hh <command> \n"
+  printf "初次运行系统，请阅读\033[0;31mReadme.md\033[0m进行初始化 \n"
+  echo
+
+  printf "【二】Main commands: \n"
+  printf "1. \033[0;31mhh\033[0m，显示hh-system主界面 \n"
+  printf "2. \033[0;31mhh <command>\033[0m，执行对应命令 \n"
+  echo
+
+  printf "【三】System commands: \n"
+  printf "1. \033[0;31m-help\033[0m，查看hh-system帮助 \n"
+  printf "2. \033[0;31m-charge\033[0m，查看hh-system定价以及如何开通\033[0;33m黄金会员\033[0m、\033[0;36m铂金会员\033[0m、\033[0;31m终身会员\033[0m \n"
+}
+
+f_charge(){
+  echo "💖公益免费💖"
+}
+
+# 命令：play
+:<<EOF
 f_weekend_play(){
   echo "
  -------------- __@      __@       __@       __@      __~@
@@ -54,3 +75,4 @@ f_weekend_play(){
  ---------- (*)/ (*)  (*)/ (*)  (*)/ (*)  (*)/ (*)  (*)/ (*)
 "
 }
+EOF
