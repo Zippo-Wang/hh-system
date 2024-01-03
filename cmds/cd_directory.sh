@@ -7,9 +7,10 @@ directory='/home/huawei/.terraform.d/plugins/local-registry/huaweicloud/huaweicl
 if [ -d $directory ]
 then
   cd $directory
-  echo '进来了'
+  printf '您已进入：'
+  pwd
 else
-  printf "没找着目录: %s \n" $directory
+  printf "该目录不存在: %s \n" $directory
 fi
 }
 
@@ -20,9 +21,10 @@ directory='/home/huawei/.terraform.d/plugins/local-registry/flexibleengine/flexi
 if [ -d $directory ]
 then
   cd $directory
-  echo '进来了'
+  printf '您已进入：'
+  pwd
 else
-  printf "没找着目录: %s \n" $directory
+  printf "该目录不存在: %s \n" $directory
 fi
 }
 
@@ -33,9 +35,10 @@ directory='/home/huawei/.terraform.d/plugins/local-registry/g42cloud/g42cloud/0.
 if [ -d $directory ]
 then
   cd $directory
-  echo '进来了'
+  printf '您已进入：'
+  pwd
 else
-  printf "没找着目录: %s \n" $directory
+  printf "该目录不存在: %s \n" $directory
 fi
 }
 
@@ -46,7 +49,8 @@ directory='/mnt/d/DOCS/study'
 if [ -d $directory ]
 then
   cd $directory
-  echo '进来了'
+  printf '您已进入：'
+  pwd
 else
   printf "你还没有学习目录。好好学习，加油!"
 fi
@@ -59,9 +63,10 @@ directory='/mnt/d/code'
 if [ -d $directory ]
 then
   cd $directory
-  echo '进来了'
+  printf '您已进入：'
+  pwd
 else
-  printf "没找着目录: %s \n" $directory
+  printf "该目录不存在: %s \n" $directory
 fi
 }
 
