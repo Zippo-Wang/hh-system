@@ -7,50 +7,58 @@ f_hh_init(){
 }
 
 source $hh_project_path/main/index.sh
+source $hh_project_path/main/constants.sh
+
 source $hh_project_path/cmds/build_provider.sh
 source $hh_project_path/cmds/cd_directory.sh
 source $hh_project_path/cmds/others.sh
 source $hh_project_path/cmds/terraform.sh
 
 # 入口
-operate=${1}
-if [[ -n ${operate} ]]
+operate1=${1}
+
+# 判断第1个参数是否是hh
+if [[ ${main_hh} != ${hh_main} ]]
 then
-  printf '\n\033[0;33m执行结果\033[0;33;5m🔊\033[0m\033[0m:'
+  printf "[ERROR]请参考Readme.md配置环境变量：\n"
+  printf "\033[0;31mhh_main='hh'\033[0m \n"
+  printf "alias \033[0;31mhh\033[0m='xxx' \n"
+  return
+fi
+
+# 判断hh后面是否有其他参数，没有就显示系统主界面，有就执行对应命令
+if [[ -n ${operate1} ]]
+then
+  printf '\033[0;33m执行结果\033[0;33;5m🔊\033[0m\033[0m:'
   echo
 else
   f_index
 fi
 
-case $operate in
+case $operate1 in
   # [1]进入目录
-  'cd-hw')  f_cd_hw;;
-  'cd-fd')  f_cd_fd;;
-  'cd-gg')  f_cd_gg;;
-  'cd-std') f_cd_std;;
-  'cd-loc') f_cd_loc;;
+  $cd_hw)  f_cd_hw;;
+  $cd_fd)  f_cd_fd;;
+  $cd_gg)  f_cd_gg;;
+  $cd_std) f_cd_std;;
+  $cd_loc) f_cd_loc;;
 
   # [2]执行build
-  'b-hw') f_build_huaweicloud;;
-  'b-fd') f_build_flexibleengine;;
-  'b-gg') f_build_g42cloud;;
-
-  # [3]terraform
-#  'tf-int') f_tf_init;;
-#  'tf-pl')  f_tf_plan;;
-#  'tf-pp')  f_tf_apply;;
+  $b_hw) f_build_huaweicloud;;
+  $b_fd) f_build_flexibleengine;;
+  $b_gg) f_build_g42cloud;;
 
   # [3]其他
-  'cms')     f_christmas;;
-  'monkey')  f_monkey;;
-  'meinv')   f_beautiful_girl;;
+  $o_cms)    f_christmas;;
+  $o_monkey) f_monkey;;
+  $o_meinv)  f_beautiful_girl;;
 
   # [4]系统命令
-  '-help')   f_help;;
-  '-charge') f_charge;;
+  $sys_help)   f_help;;
+  $sys_charge) f_charge;;
 
   # 公共
-  'init') f_hh_init;;
-  '');;
-  *) echo "没有这个命令：hh $@"
+  $common_init) f_hh_init;;
+  $common_none);;
+  *) echo "[ERROR]没有这个命令：hh $@"
 esac
