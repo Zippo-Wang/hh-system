@@ -26,12 +26,12 @@ f_build_flexibleengine(){
   make build
 
   echo -e "\033[0;36;40m[FlexibleEngineCloud Provider] - Complete the build and start copying files to the local warehouse.\033[0m"
-  rm -rf ~/.terraform.d/plugins/local-registry/flexibleengine/flexibleengine/0.0.1/linux_amd64/terraform-provider-flexibleengine
+  rm -rf ~/.terraform.d/plugins/local-registry/flexibleenginecloud/flexibleengine/0.0.1/linux_amd64/terraform-provider-flexibleengine
 
-  cp ~/go/bin/terraform-provider-flexibleengine ~/.terraform.d/plugins/local-registry/flexibleengine/flexibleengine/0.0.1/linux_amd64
+  cp ~/go/bin/terraform-provider-flexibleengine ~/.terraform.d/plugins/local-registry/flexibleenginecloud/flexibleengine/0.0.1/linux_amd64
 
   echo -e "\033[0;36;40m[FlexibleEngineCloud Provider] - All Completed\033[0m"
-  stat -c %y ~/.terraform.d/plugins/local-registry/flexibleengine/flexibleengine/0.0.1/linux_amd64/terraform-provider-flexibleengine
+  stat -c %y ~/.terraform.d/plugins/local-registry/flexibleenginecloud/flexibleengine/0.0.1/linux_amd64/terraform-provider-flexibleengine
 }
 
 f_build_g42cloud(){
