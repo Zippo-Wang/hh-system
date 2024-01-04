@@ -16,7 +16,7 @@ fi
 
 # 进入build完法电provider后的目录
 f_cd_fd(){
-directory='/home/huawei/.terraform.d/plugins/local-registry/flexibleenginecloud/flexibleengine/0.0.1/linux_amd64'
+directory='/home/huawei/.terraform.d/plugins/local-registry/flexibleengine/flexibleengine/0.0.1/linux_amd64'
 
 if [ -d $directory ]
 then
