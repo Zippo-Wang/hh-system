@@ -20,15 +20,14 @@ f_index(){
   # 支持命令的提示界面
   echo
 
-  printf "\033[0;34m%-26s %-23s %-20s %-30s\033[0m\n" '[1]进入目录' '[2]执行build' '[3]其他' '[4]系统命令'
-  printf "\033[0;32m%-9s %-15s  %-9s %-14s  %-8s %-12s  %-9s %-12s\033[0m\n" 命令 说明 命令 说明   命令 说明       命令 说明
-  printf "%-7s %-19s  %-7s %-14s  %-6s %-13s  %-7s %-12s\n" cd-hw 进入华为目录    b-hw build华为    cms 圣诞节     -help 系统帮助
-  printf "%-7s %-19s  %-7s %-14s  %-6s %-13s  %-7s %-12s\n" cd-fd 进入法电目录    b-fd build法电    monkey 小猴子  -charge 系统定价
-  printf "%-7s %-17s  %-7s %-12s  %-6s %-12s  %-7s %-12s\n" cd-gg 进入G42目录    b-gg buildG42    meinv 生成美女
-  # 下面这行用于扩展
-  #printf "%-7s %-19s  %-7s %-14s  %-7s %-12s  %-7s %-12s\n" cd-std 进入学习目录                                       play 去哪玩
-  printf "%-7s %-58s    \033[0;31m%-7s %-12s\033[0m\n" cd-std 进入学习目录
-  printf "%-7s %-56s    \033[0;31m%-7s %-12s\033[0m\n" cd-loc 进入本地code
+  printf "\033[0;34m%-26s %-23s %-20s %-30s\033[0m\n" '[1]进入目录' '[2]执行build' '[3]terraform' '[4]系统命令'
+  printf "\033[0;32m%-9s %-15s  %-7s %-16s  %-12s %-10s  %-9s %-12s\033[0m\n" 命令 说明 命令 说明        命令 说明            命令 说明
+  printf "%-7s %-19s  %-5s %-16s  %-2s %-7s %-11s  %-7s %-12s\n" cd-hw 进入华为目录    b-hw build华为    tf init 初始化      cms 圣诞节
+  printf "%-7s %-19s  %-5s %-16s  %-2s %-7s %-12s  %-7s %-12s\n" cd-fd 进入法电目录    b-fd build法电   tf plan 执行计划     monkey 小猴子
+  printf "%-7s %-17s  %-5s %-14s  %-2s %-7s %-10s  %-7s %-12s\n" cd-gg 进入G42目录    b-gg buildG42    tf apply 执行       meinv 生成美女
+  printf "%-7s %-41s  %-2s %-6s %-10s  %-7s %-12s\n"             cd-std 进入学习目录                    tf destroy 删除     -help 系统帮助
+  printf "%-7s %-60s  %-7s %-12s\n"                              cd-loc 进入本地code                                       -charge 系统定价
+
   # 下面这行用于扩展
   #printf "%-7s %-19s  %-7s %-14s  %-7s %-12s  %-7s %-12s\n" cd-loc 进入本地code
 }

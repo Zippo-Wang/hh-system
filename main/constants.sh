@@ -7,24 +7,32 @@ cd_gg='cd-gg'
 cd_std='cd-std'
 cd_loc='cd-loc'
 
+
 # [2]执行build
 b_hw='b-hw'
 b_fd='b-fd'
 b_gg='b-gg'
 
-# [3]其他
+
+# [3]terraform
+common_tf='tf'
+tf_init='init'
+tf_plan='plan'
+tf_apply='apply'
+tf_destroy='destroy'
+
+
+# [4]其他
 o_cms='cms'
 o_monkey='monkey'
 o_meinv='meinv'
 
-# [3]terraform
-tf_int='tf-int'
-tf_pl='tf-pl'
-tf_pp='tf-pp'
 
 # [4]系统命令
-sys_help='-help'
-sys_charge='-charge'
+sys_help1='-help'
+sys_help2='--help'
+sys_charge1='-charge'
+sys_charge2='--charge'
 
 # 公共
 common_init='init'

@@ -1,11 +1,5 @@
 #!/bin/bash
 
-# 系统初始化
-f_hh_init(){
-  for file in `find $hh_project_path -name *.sh -type f`; do vi $file -c 'set ff=unix | wq!'; done
-  echo 'hh-system have finished init successfully!'
-}
-
 source $hh_project_path/main/index.sh
 source $hh_project_path/main/constants.sh
 
@@ -14,9 +8,17 @@ source $hh_project_path/cmds/cd_directory.sh
 source $hh_project_path/cmds/others.sh
 source $hh_project_path/cmds/terraform.sh
 
+# 系统初始化
+f_hh_init(){
+  for file in `find $hh_project_path -name *.sh -type f`; do vi $file -c 'set ff=unix | wq!'; done
+  echo 'hh-system have finished init successfully!'
+}
+
 # 入口
 operate1=${1}
+operate2=${2}
 
+# 系统逻辑
 # 判断第1个参数是否是hh
 if [[ ${main_hh} != ${hh_main} ]]
 then
@@ -35,6 +37,16 @@ else
   f_index
 fi
 
+# tf相关命令特殊处理
+f_terrraform(){
+  case $operate2 in
+    $tf_init)    f_tf_init;;
+    $tf_plan)    f_tf_plan;;
+    $tf_apply)   f_tf_apply;;
+    $tf_destroy) f_tf_destroy;;
+  esac
+}
+
 case $operate1 in
   # [1]进入目录
   $cd_hw)  f_cd_hw;;
@@ -48,17 +60,26 @@ case $operate1 in
   $b_fd) f_build_flexibleengine;;
   $b_gg) f_build_g42cloud;;
 
-  # [3]其他
+  # [3]terraform
+  $common_tf)  f_terrraform;;
+
+  # [4]其他
   $o_cms)    f_christmas;;
   $o_monkey) f_monkey;;
   $o_meinv)  f_beautiful_girl;;
 
   # [4]系统命令
-  $sys_help)   f_help;;
-  $sys_charge) f_charge;;
+  $sys_help1)   f_help;;
+  $sys_help2)   f_help;;
+  $sys_charge1) f_charge;;
+  $sys_charge2) f_charge;;
 
   # 公共
   $common_init) f_hh_init;;
   $common_none);;
   *) echo "[ERROR]没有这个命令：hh $@"
 esac
+
+
+
+
