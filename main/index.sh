@@ -31,8 +31,4 @@ f_index(){
   # 下面这行用于扩展
   #printf "%-7s %-19s  %-7s %-14s  %-7s %-12s  %-7s %-12s\n" cd-loc 进入本地code
 }
-common_tf='tf'
-tf_init='init'
-tf_plan='plan'
-tf_apply='apply'
-tf_destroy='destroy'
+
