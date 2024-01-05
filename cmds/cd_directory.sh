@@ -11,6 +11,7 @@ then
   pwd
 else
   printf "该目录不存在: %s \n" $directory
+  printf "快使用\033[0;31m$main_hh $b_hw\033[0m build 华为 provider吧~ \n"
 fi
 }
 
@@ -25,6 +26,7 @@ then
   pwd
 else
   printf "该目录不存在: %s \n" $directory
+  printf "快使用\033[0;31m$main_hh $b_fd\033[0m build 法电 provider吧~ \n"
 fi
 }
 
@@ -39,12 +41,13 @@ then
   pwd
 else
   printf "该目录不存在: %s \n" $directory
+    printf "快使用\033[0;31m$main_hh $b_gg\033[0m build G42 provider吧~ \n"
 fi
 }
 
 # 进入windows的本地学习目录
 f_cd_std(){
-directory='/mnt/d/DOCS/study'
+directory='/mnt/d/DOCS/study2'
 
 if [ -d $directory ]
 then
@@ -52,9 +55,26 @@ then
   printf '您已进入：'
   pwd
 else
-  printf "你还没有学习目录。好好学习，加油!"
+  printf "你还没有学习目录。好好学习，加油! \n"
+  printf "是否在windows下创建学习目录：\033[0;31m/D/DOCS/study \033[0m \n"
+  printf "是: \033[0;31m$main_hh $mk_std\033[0m   否: 什么都不做 \n"
 fi
 }
+
+# 创建学习目录
+f_mk_std(){
+directory='/mnt/d/DOCS/study'
+
+if [ -d $directory ]
+then
+  echo "该目录已存在，好好学习吧！"
+  return
+else
+  mkdir -p $directory
+  printf "您已成功创建\033[0;31m$directory\033[0m, 快去好好学习吧！ \n"
+fi
+}
+
 
 # 进入windows的本地代码目录
 f_cd_loc(){
@@ -69,6 +89,3 @@ else
   printf "该目录不存在: %s \n" $directory
 fi
 }
-
-
-
