@@ -52,6 +52,7 @@ f_help(){
   printf "1. 初次运行系统，请阅读\033[0;31mReadme.md\033[0m配置环境变量，然后进行初始化 \n"
   printf "2. \033[0;31mhh\033[0m，显示hh-system主界面 \n"
   printf "3. \033[0;31mhh <command>\033[0m，执行对应命令 \n"
+  printf "4. \033[0;31mTAB\033[0m，自动补全，敬请期待！ \n"
   echo
 
   printf "【二】Main commands: \n"

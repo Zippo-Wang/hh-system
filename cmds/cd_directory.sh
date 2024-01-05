@@ -7,8 +7,11 @@ directory='/home/huawei/.terraform.d/plugins/local-registry/huaweicloud/huaweicl
 if [ -d $directory ]
 then
   cd $directory
-  printf '您已进入：'
+  printf '\033[0;34m您已进入: \033[0m'
   pwd
+  echo
+  printf "\033[0;34m以下为该目录下所有文件夹/文件 \033[0m\n"
+  ll
 else
   printf "该目录不存在: %s \n" $directory
   printf "快使用\033[0;31m$main_hh $b_hw\033[0m build 华为 provider吧~ \n"
@@ -22,8 +25,11 @@ directory='/home/huawei/.terraform.d/plugins/local-registry/flexibleengine/flexi
 if [ -d $directory ]
 then
   cd $directory
-  printf '您已进入：'
+  printf '\033[0;34m您已进入: \033[0m'
   pwd
+  echo
+  printf "\033[0;34m以下为该目录下所有文件夹/文件 \033[0m\n"
+  ll
 else
   printf "该目录不存在: %s \n" $directory
   printf "快使用\033[0;31m$main_hh $b_fd\033[0m build 法电 provider吧~ \n"
@@ -37,23 +43,29 @@ directory='/home/huawei/.terraform.d/plugins/local-registry/g42cloud/g42cloud/0.
 if [ -d $directory ]
 then
   cd $directory
-  printf '您已进入：'
+  printf '\033[0;34m您已进入: \033[0m'
   pwd
+  echo
+  printf "\033[0;34m以下为该目录下所有文件夹/文件 \033[0m\n"
+  ll
 else
   printf "该目录不存在: %s \n" $directory
-    printf "快使用\033[0;31m$main_hh $b_gg\033[0m build G42 provider吧~ \n"
+  printf "快使用\033[0;31m$main_hh $b_gg\033[0m build G42 provider吧~ \n"
 fi
 }
 
 # 进入windows的本地学习目录
 f_cd_std(){
-directory='/mnt/d/DOCS/study2'
+directory='/mnt/d/DOCS/study'
 
 if [ -d $directory ]
 then
   cd $directory
-  printf '您已进入：'
+  printf '\033[0;34m您已进入: \033[0m'
   pwd
+  echo
+  printf "\033[0;34m以下为该目录下所有文件夹/文件 \033[0m\n"
+  ll
 else
   printf "你还没有学习目录。好好学习，加油! \n"
   printf "是否在windows下创建学习目录：\033[0;31m/D/DOCS/study \033[0m \n"
@@ -83,8 +95,11 @@ directory='/mnt/d/code'
 if [ -d $directory ]
 then
   cd $directory
-  printf '您已进入：'
+  printf '\033[0;34m您已进入: \033[0m'
   pwd
+  echo
+  printf "\033[0;34m以下为该目录下所有文件夹/文件 \033[0m\n"
+  ll
 else
   printf "该目录不存在: %s \n" $directory
 fi
