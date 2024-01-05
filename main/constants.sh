@@ -7,6 +7,8 @@ cd_gg='cd-gg'
 cd_std='cd-std'
 cd_loc='cd-loc'
 
+mk_std='mk-std'
+
 
 # [2]执行build
 b_hw='b-hw'

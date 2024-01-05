@@ -55,6 +55,8 @@ case $operate1 in
   $cd_std) f_cd_std;;
   $cd_loc) f_cd_loc;;
 
+  $mk_std) f_mk_std;;
+
   # [2]执行build
   $b_hw) f_build_huaweicloud;;
   $b_fd) f_build_flexibleengine;;
