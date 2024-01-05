@@ -8,6 +8,8 @@ source $hh_project_path/cmds/cd_directory.sh
 source $hh_project_path/cmds/others.sh
 source $hh_project_path/cmds/terraform.sh
 
+source $hh_project_path/utils/auto_tab.sh
+
 # 系统初始化
 f_hh_init(){
   for file in `find $hh_project_path -name *.sh -type f`; do vi $file -c 'set ff=unix | wq!'; done
