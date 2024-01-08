@@ -81,7 +81,7 @@ case $operate1 in
   # 公共
   $common_init) f_hh_init;;
   $common_none);;
-  *) echo "[ERROR]没有这个命令：hh $@"
+  *) printf "\033[0;31m没有这个命令：\033[0mhh $@ \n"
 esac
 
 

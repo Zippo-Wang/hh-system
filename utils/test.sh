@@ -2,5 +2,5 @@
 
 x1='tf'
 x2='init'
-x3="$x1 $x2"
+x3="$x1$x2"
 echo $x3
