@@ -18,6 +18,7 @@ b_gg='b-gg'
 
 # [3]terraform
 common_tf='tf'
+common_terraform='terraform'
 tf_init='init'
 tf_plan='plan'
 tf_apply='apply'

@@ -48,40 +48,40 @@ f_beautiful_girl(){
 }
 
 f_help(){
-  printf "【一】Usage: hh <command> \n"
-  printf "1. 初次运行系统，请阅读\033[0;31mReadme.md\033[0m配置环境变量，然后进行初始化 \n"
-  printf "2. \033[0;31mhh\033[0m，显示hh-system主界面 \n"
-  printf "3. \033[0;31mhh <command>\033[0m，执行对应命令 \n"
-  printf "4. \033[0;31mTAB\033[0m，自动补全，敬请期待！ \n"
+  printf "\033[0;1;33m【一】Usage: hh <command> \033[0m\n"
+  printf "1. 初次运行系统，请阅读\033[0;1;32mReadme.md\033[0m配置环境变量，然后进行初始化 \n"
+  printf "2. \033[0;32mhh\033[0m，显示hh-system主界面 \n"
+  printf "3. \033[0;32mhh <command>\033[0m，执行对应命令 \n"
+  printf "4. \033[0;32mTAB\033[0m，自动补全，敬请期待！ \n"
   echo
 
-  printf "【二】Main commands: \n"
-  printf " \033[0;31mcd-hw\033[0m \t 进入build 华为 provider后的目录，支持自定义\n"
-  printf " \033[0;31mcd-fd\033[0m \t 进入build 法电 provider后的目录，支持自定义\n"
-  printf " \033[0;31mcd-gg\033[0m \t 进入build G42  provider后的目录，支持自定义\n"
-  printf " \033[0;31mcd-std\033[0m  进入windows下本地日常学习目录，支持自定义\n"
-  printf " \033[0;31mcd-loc\033[0m  进入windows下本地代码存放目录，支持自定义\n"
+  printf "\033[0;1;33m【二】Main commands: \033[0m\n"
+  printf " \033[0;32m$cd_hw\033[0m \t     进入terraform-huaweicloud-provider目录\n"
+  printf " \033[0;32m$cd_fd\033[0m \t     进入terraform-flexibleengine-provider目录\n"
+  printf " \033[0;32m$cd_gg\033[0m \t     进入terraform-g42cloud-provider目录\n"
+  printf " \033[0;32m$cd_std\033[0m      进入windows下本地日常学习目录\n"
+  printf " \033[0;32m$cd_loc\033[0m      进入windows下本地代码存放目录\n"
   echo
 
-  printf " \033[0;31mb-hw\033[0m  build tf-huaweicloud project，生成二进制文件\n"
-  printf " \033[0;31mb-fd\033[0m  build tf-flexibleengine project，生成二进制文件\n"
-  printf " \033[0;31mb-gg\033[0m  build tf-g42cloud project，生成二进制文件\n"
+  printf " \033[0;32m$b_hw\033[0m        build terraform-huaweicloud project，生成二进制文件\n"
+  printf " \033[0;32m$b_fd\033[0m        build terraform-flexibleengine project，生成二进制文件\n"
+  printf " \033[0;32m$b_gg\033[0m        build terraform-g42cloud project，生成二进制文件\n"
   echo
 
-  printf " \033[0;31mtf init\033[0m     执行terraform init\n"
-  printf " \033[0;31mtf plan\033[0m     执行terraform plan\n"
-  printf " \033[0;31mtf apply\033[0m    执行terraform apply\n"
-  printf " \033[0;31mtf destroy\033[0m  执行terraform destroy\n"
+  printf " \033[0;32m$common_tf $tf_init\033[0m     执行$common_terraform $tf_init\n"
+  printf " \033[0;32m$common_tf $tf_plan\033[0m     执行$common_terraform $tf_plan\n"
+  printf " \033[0;32m$common_tf $tf_apply\033[0m    执行$common_terraform $tf_apply\n"
+  printf " \033[0;32m$common_tf $tf_destroy\033[0m  执行$common_terraform $tf_destroy\n"
   echo
 
-  printf " \033[0;31mcms\033[0m     圣诞快乐！\n"
-  printf " \033[0;31mmonkey\033[0m  一只小猴子\n"
-  printf " \033[0;31mmeinv\033[0m   该命令没有描述信息\n"
+  printf " \033[0;32m$o_cms\033[0m         圣诞快乐！\n"
+  printf " \033[0;32m$o_monkey\033[0m      一只小猴子\n"
+  printf " \033[0;32m$o_meinv\033[0m       该命令没有描述信息\n"
   echo
 
-  printf "【三】System commands: \n"
-  printf " \033[0;31m--help\033[0m    查看hh-system帮助 \n"
-  printf " \033[0;31m--charge\033[0m  查看hh-system定价以及如何开通\033[0;33m黄金会员\033[0m、\033[0;36m铂金会员\033[0m、\033[0;31m终身会员\033[0m \n"
+  printf "\033[0;1;33m【三】System commands: \033[0m\n"
+  printf " \033[0;32m$sys_help2\033[0m      查看hh-system帮助 \n"
+  printf " \033[0;32m$sys_charge2\033[0m    查看hh-system定价以及如何开通\033[0;33m黄金会员\033[0m、\033[0;36m铂金会员\033[0m、\033[0;31m终身会员\033[0m \n"
 }
 
 f_charge(){
