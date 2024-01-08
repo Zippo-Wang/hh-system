@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+. $hh_project_path/utils/color.sh
+
 # 进入华为provider目录
 f_cd_hw(){
 tf_hw="terraform-provider-huaweicloud/"
