@@ -11,9 +11,6 @@ then
   cd $hw_provider_path
   printf '\033[0;1;32m您已进入: \033[0m'
   pwd
-  echo
-  printf "\033[0;1;32m以下为该目录下所有文件夹/文件\033[0m \n"
-  ll
 else
   printf "\033[0;31m该目录不存在:\033[0m %s \n" $hw_provider_path
   printf "快去\033[0;34mgit clone\033[0m tf-huaweicloud-provider吧~ \n"
@@ -29,9 +26,6 @@ then
   cd $fd_provider_path
   printf '\033[0;1;32m您已进入: \033[0m'
   pwd
-  echo
-  printf "\033[0;1;32m以下为该目录下所有文件夹/文件\033[0m \n"
-  ll
 else
   printf "\033[0;31m该目录不存在:\033[0m %s \n" $fd_provider_path
   printf "快去\033[0;34mgit clone\033[0m tf-flexibleengine-provider吧~ \n"
@@ -47,9 +41,6 @@ then
   cd $gg_provider_path
   printf '\033[0;1;32m您已进入: \033[0m'
   pwd
-  echo
-  printf "\033[0;1;32m以下为该目录下所有文件夹/文件\033[0m \n"
-  ll
 else
   printf "\033[0;31m该目录不存在:\033[0m %s \n" $gg_provider_path
   printf "快去\033[0;34mgit clone\033[0m tf-g42cloud-provider吧~ \n"
@@ -95,8 +86,13 @@ fi
 # 创建学习目录
 f_mk_std(){
 directory='/mnt/d/DOCS/study'
+pan='/mnt/e'  # Note: 如果改了pan，上面的directory需要随之修改
 
-if [ -d $directory ]
+if [ ! -d $pan ]
+then
+  echo "你的windows下没有D盘。您可以修改cmds/cd_directory.sh中pan的变量值，以更改新目录的位置"
+  return
+elif [ -d $directory ]
 then
   echo "该目录已存在，好好学习吧！"
   return
