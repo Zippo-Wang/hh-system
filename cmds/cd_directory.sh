@@ -65,12 +65,14 @@ fi
 
 
 # 进入windows的本地学习目录
-f_cd_std(){
-directory='/mnt/d/DOCS/study'
+std_directory='/mnt/d/DOCS/study' # Note：可自定义学习目录
+pan='/mnt/d'  # Note: 把d盘改成c盘
 
-if [ -d $directory ]
+f_cd_std(){
+
+if [ -d $std_directory ]
 then
-  cd $directory
+  cd $std_directory
   printf '\033[0;1;32m您已进入: \033[0m'
   pwd
   echo
@@ -85,19 +87,16 @@ fi
 
 # 创建学习目录
 f_mk_std(){
-directory='/mnt/d/DOCS/study'
-pan='/mnt/e'  # Note: 如果改了pan，上面的directory需要随之修改
-
 if [ ! -d $pan ]
 then
   echo "你的windows下没有D盘。您可以修改cmds/cd_directory.sh中pan的变量值，以更改新目录的位置"
   return
-elif [ -d $directory ]
+elif [ -d $std_directory ]
 then
   echo "该目录已存在，好好学习吧！"
   return
 else
-  mkdir -p $directory
+  mkdir -p $std_directory
   printf "您已成功创建\033[0;1;32m$directory\033[0m, 快去好好学习吧！ \n"
 fi
 }
