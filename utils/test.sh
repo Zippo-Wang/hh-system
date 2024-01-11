@@ -2,9 +2,8 @@
 
 x1='tf'
 x2='init'
-x3="$x1$x2"
+x3="$x1 $x2"
 echo $x3
-
 
 # 字体颜色
 #echo "${font_red}xxx${cend}"
@@ -15,9 +14,10 @@ echo $x3
 #echo $res
 
 # 字符串包含
-str1="helloworld"
-str2="orl"
-if [[ $str1 =~ $str2 ]]
-then
-  echo "xxx"
-fi
+#str1="helloworld"
+#str2="orl"
+#if [[ $str1 =~ $str2 ]]
+#then
+#  echo "xxx"
+#fi
+
