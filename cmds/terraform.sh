@@ -12,10 +12,10 @@ f_tf_plan(){
 
 f_tf_apply(){
   echo -e "\033[0;36;40m[Terraform] - terraform apply\033[0m"
-  terraform apply
+  echo yes | terraform apply
 }
 
 f_tf_destroy(){
   echo -e "\033[0;36;40m[Terraform] - terraform destroy\033[0m"
-  terraform destroy
+  echo yes | terraform destroy
 }

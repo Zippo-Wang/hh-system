@@ -70,8 +70,8 @@ f_help(){
 
   printf " \033[0;32m$common_tf $tf_init\033[0m     执行$common_terraform $tf_init\n"
   printf " \033[0;32m$common_tf $tf_plan\033[0m     执行$common_terraform $tf_plan\n"
-  printf " \033[0;32m$common_tf $tf_apply\033[0m    执行$common_terraform $tf_apply\n"
-  printf " \033[0;32m$common_tf $tf_destroy\033[0m  执行$common_terraform $tf_destroy\n"
+  printf " \033[0;32m$common_tf $tf_apply\033[0m    执行$common_terraform $tf_apply，且\033[0;31m无需输入yes + Enter\033[0m\n"
+  printf " \033[0;32m$common_tf $tf_destroy\033[0m  执行$common_terraform $tf_destroy，且\033[0;31m无需输入yes + Enter\033[0m\n"
   echo
 
   printf " \033[0;32m$o_cms\033[0m         圣诞快乐！\n"
