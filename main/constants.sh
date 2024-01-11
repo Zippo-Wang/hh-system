@@ -43,3 +43,15 @@ common_none=''
 
 # 核心命令
 main_hh='hh'
+
+cmd_list1=(\
+  $cd_hw $cd_fd $cd_gg $cd_std $cd_loc $mk_std \
+  $b_hw $b_fd $b_gg \
+  $o_cms $o_monkey $o_meinv \
+  $sys_help1 $sys_help2 $sys_charge1 $sys_charge2 \
+  $common_tf $common_init \
+)
+
+cmd_list2=(\
+  $tf_init $tf_plan $tf_apply $tf_destroy \
+)
