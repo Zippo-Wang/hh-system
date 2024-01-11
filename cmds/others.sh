@@ -50,9 +50,9 @@ f_beautiful_girl(){
 f_help(){
   printf "\033[0;1;33m【一】Usage: hh <command> \033[0m\n"
   printf "1. 初次运行系统，请阅读\033[0;1;32mReadme.md\033[0m配置环境变量，然后进行初始化 \n"
-  printf "2. \033[0;32mhh\033[0m，显示hh-system主界面 \n"
-  printf "3. \033[0;32mhh <command>\033[0m，执行对应命令 \n"
-  printf "4. \033[0;32mTAB\033[0m，自动补全，敬请期待！ \n"
+  printf "\033[0;32mhh\033[0m                显示hh-system主界面 \n"
+  printf "\033[0;32mhh <cmd1> <cmd2>\033[0m  执行对应命令，1对<>表示可选 \n"
+  printf "\033[0;32mTAB\033[0m               自动补全，按tab键即可自动补全本系统支持的所有命令 \n"
   echo
 
   printf "\033[0;1;33m【二】Main commands: \033[0m\n"
@@ -63,9 +63,9 @@ f_help(){
   printf " \033[0;32m$cd_loc\033[0m      进入windows下本地代码存放目录\n"
   echo
 
-  printf " \033[0;32m$b_hw\033[0m        build terraform-huaweicloud project，生成二进制文件\n"
-  printf " \033[0;32m$b_fd\033[0m        build terraform-flexibleengine project，生成二进制文件\n"
-  printf " \033[0;32m$b_gg\033[0m        build terraform-g42cloud project，生成二进制文件\n"
+  printf " \033[0;32m$b_hw\033[0m        build terraform-huaweicloud-provider，生成二进制文件\n"
+  printf " \033[0;32m$b_fd\033[0m        build terraform-flexibleengine-provider，生成二进制文件\n"
+  printf " \033[0;32m$b_gg\033[0m        build terraform-g42cloud-provider，生成二进制文件\n"
   echo
 
   printf " \033[0;32m$common_tf $tf_init\033[0m     执行$common_terraform $tf_init\n"
@@ -80,6 +80,7 @@ f_help(){
   echo
 
   printf "\033[0;1;33m【三】System commands: \033[0m\n"
+  printf " \033[0;32m$common_init\033[0m        系统初始化。初次运行系统，请先进行初始化 \n"
   printf " \033[0;32m$sys_help2\033[0m      查看hh-system帮助 \n"
   printf " \033[0;32m$sys_charge2\033[0m    查看hh-system定价以及如何开通\033[0;33m黄金会员\033[0m、\033[0;36m铂金会员\033[0m、\033[0;31m终身会员\033[0m \n"
 }

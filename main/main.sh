@@ -9,11 +9,30 @@ source $hh_project_path/cmds/others.sh
 source $hh_project_path/cmds/terraform.sh
 
 source $hh_project_path/utils/auto_tab.sh
+source $hh_project_path/utils/color.sh
 
 # 系统初始化
 f_hh_init(){
   for file in `find $hh_project_path -name *.sh -type f`; do vi $file -c 'set ff=unix | wq!'; done
-  echo 'hh-system have finished init successfully!'
+
+  # 判断系统是否支持bash_completion
+  script_directory="/etc/bash_completion.d/"      # 存放脚本的目录
+  env_directory="/usr/share/bash-completion/bash_completion"  # 使脚本生效的目录
+  if [ ! -d $script_directory ]
+  then
+    echo "该目录不存在，您的Linux系统不支持hh-system。${script_directory}"
+    return
+  fi
+
+  # 如果支持，就写入自动补全脚本
+  if sudo -v &>/dev/null;
+  then
+    sudo cp $hh_project_path/utils/auto_tab.sh /etc/bash_completion.d/hh_auto_tab
+    . $env_directory  # 刷新自动补全的环境配置，使立即生效
+    printf "${font_green}hh-system初始化成功，请重新打开终端窗口使配置生效！${cend}\n"
+  else
+    printf "${font_red}sodu密码不正确，hh-system初始化失败！${cend}\n"
+  fi
 }
 
 # 入口
@@ -25,8 +44,8 @@ operate2=${2}
 if [[ ${main_hh} != ${hh_main} ]]
 then
   printf "[ERROR]请参考Readme.md配置环境变量：\n"
-  printf "\033[0;31mhh_main='hh'\033[0m \n"
-  printf "alias \033[0;31mhh\033[0m='xxx' \n"
+  printf "${font_red}hh_main='hh'${cend} \n"
+  printf "alias ${font_red}hh${cend}='xxx' \n"
   return
 fi
 
@@ -81,7 +100,7 @@ case $operate1 in
   # 公共
   $common_init) f_hh_init;;
   $common_none);;
-  *) echo -e "\033[0;31m没有这个命令：\033[0mhh $@"
+  *) echo -e "${font_red}没有这个命令：${cend}hh $@"
 esac
 
 
