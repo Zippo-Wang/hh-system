@@ -86,7 +86,7 @@ f_help(){
 }
 
 f_charge(){
-  echo "💖公益免费💖"
+  printf "${font_red}💖${cend}\033[1;32m公益免费${cend}${font_red}💖${cend} \n"
 }
 
 # 命令：play
@@ -99,4 +99,3 @@ f_weekend_play(){
 "
 }
 EOF
-
