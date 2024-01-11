@@ -65,6 +65,7 @@ f_terrraform(){
     $tf_plan)    f_tf_plan;;
     $tf_apply)   f_tf_apply;;
     $tf_destroy) f_tf_destroy;;
+    *) printf "${font_red}没有这个命令：${cend}hh ${operate1} ${operate2} ...\n";;
   esac
 }
 
@@ -100,7 +101,7 @@ case $operate1 in
   # 公共
   $common_init) f_hh_init;;
   $common_none);;
-  *) echo -e "${font_red}没有这个命令：${cend}hh $@"
+  *) printf "${font_red}没有这个命令：${cend}hh $@ \n"
 esac
 
 
