@@ -2,6 +2,12 @@
 
 source $hh_project_path/utils/color.sh
 
+# 自定义学习目录、自定义盘符
+# -------------------------------------------------------------------------------------------
+pan='/mnt/d'  # Note: 例如把d盘改成c盘 /mnt/c
+std_directory='/mnt/d/DOCS/study' # Note：自定义学习目录
+# -------------------------------------------------------------------------------------------
+
 # 进入华为provider目录
 f_cd_hw(){
 tf_hw="terraform-provider-huaweicloud/"
@@ -65,8 +71,6 @@ fi
 
 
 # 进入windows的本地学习目录
-std_directory='/mnt/d/DOCS/study' # Note：可自定义学习目录
-pan='/mnt/d'  # Note: 把d盘改成c盘
 
 f_cd_std(){
 
