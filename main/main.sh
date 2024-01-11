@@ -45,8 +45,6 @@ operate3=${3}
 if [[ ${main_hh} != ${hh_main} ]]
 then
   printf "[ERROR]请参考Readme.md配置环境变量：\n"
-  printf "${font_red}hh_main='hh'${cend} \n"
-  printf "alias ${font_red}hh${cend}='xxx' \n"
   return
 fi
 
