@@ -64,10 +64,11 @@ f_terrraform(){
 if [[ ! ${operate3} ]]  # 确保init/plan等命令后没有其他参数
 then
 case $operate2 in
-  $tf_init)    f_tf_init;;
-  $tf_plan)    f_tf_plan;;
-  $tf_apply)   f_tf_apply;;
-  $tf_destroy) f_tf_destroy;;
+  $tf_init)     f_tf_init;;
+  $tf_plan)     f_tf_plan;;
+  $tf_apply)    f_tf_apply;;
+  $tf_destroy)  f_tf_destroy;;
+  $common_none) printf "你输入的${font_red}命令不完整${cend}，你可能想使用：hh tf $tf_init/$tf_plan/$tf_apply/$tf_destroy \n";;
 esac
 else
   printf "${font_red}没有这个命令：${cend}$current_cmd\n"
