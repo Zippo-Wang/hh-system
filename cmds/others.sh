@@ -49,10 +49,10 @@ f_beautiful_girl(){
 
 f_help(){
   printf "\033[0;1;33m【一】Usage: hh <command> ${cend}\n"
-  printf "1. 初次运行系统，请阅读\033[0;1;32mReadme.md${cend}配置环境变量，然后进行初始化 \n"
+  printf "1. 初次运行系统，请阅读${font_green}Readme.md${cend}配置环境变量，然后进行初始化 \n"
   printf "${font_green}hh${cend}                显示hh-system主界面 \n"
   printf "${font_green}hh <cmd1> <cmd2>${cend}  执行对应命令，1对<>表示可选 \n"
-  printf "${font_green}TAB${cend}               自动补全，按tab键即可自动补全本系统支持的所有命令 \n"
+  printf "${font_green}TAB${cend}               ${font_purple}自动补全${cend}，按tab键即可自动补全本系统支持的所有命令 \n"
   echo
 
   printf "\033[0;1;33m【二】Main commands: ${cend}\n"
