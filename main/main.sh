@@ -38,6 +38,7 @@ f_hh_init(){
 # 入口
 operate1=${1}
 operate2=${2}
+operate3=${3}
 
 # 系统逻辑
 # 判断第1个参数是否是hh
@@ -60,15 +61,23 @@ fi
 
 # tf相关命令特殊处理
 f_terrraform(){
-  case $operate2 in
-    $tf_init)    f_tf_init;;
-    $tf_plan)    f_tf_plan;;
-    $tf_apply)   f_tf_apply;;
-    $tf_destroy) f_tf_destroy;;
-    *) printf "${font_red}没有这个命令：${cend}hh ${operate1} ${operate2} ...\n";;
-  esac
+if [[ ! ${operate3} ]]  # 确保init/plan等命令后没有其他参数
+then
+case $operate2 in
+  $tf_init)    f_tf_init;;
+  $tf_plan)    f_tf_plan;;
+  $tf_apply)   f_tf_apply;;
+  $tf_destroy) f_tf_destroy;;
+esac
+else
+  printf "${font_red}没有这个命令：${cend}$current_cmd\n"
+fi
 }
 
+# 外层if防止用户输入的命令>=系统支持的命令，但系统命令仍然会执行
+current_cmd="$main_hh $*" # 直接获取用户所有输入
+if [[ ${cmd_list1[*]} =~ $operate1 && ${cmd_list2} =~ $operate2 ]]
+then
 case $operate1 in
   # [1]进入目录
   $cd_hw)  f_cd_hw;;
@@ -101,8 +110,10 @@ case $operate1 in
   # 公共
   $common_init) f_hh_init;;
   $common_none);;
-  *) printf "${font_red}没有这个命令：${cend}hh $@ \n"
 esac
+else
+  printf "${font_red}没有这个命令：${cend}$current_cmd \n"
+fi
 
 
 
