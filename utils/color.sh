@@ -22,3 +22,8 @@ bkd_blue='\033[0;44m'
 bkd_purple='\033[0;45m'
 bkd_cyan='\033[0;46m'
 bkd_white='\033[0;47m'
+
+
+# 其他
+o_flash='\033[0;5m'
+
