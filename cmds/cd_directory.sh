@@ -2,12 +2,6 @@
 
 source $hh_project_path/utils/color.sh
 
-# 自定义学习目录、自定义盘符
-# -------------------------------------------------------------------------------------------
-pan='/mnt/d'  # Note: 例如把d盘改成c盘 /mnt/c
-std_directory='/mnt/d/DOCS/study' # Note：自定义学习目录
-# -------------------------------------------------------------------------------------------
-
 # 进入华为provider目录
 f_cd_hw(){
 tf_hw="terraform-provider-huaweicloud/"
@@ -74,9 +68,9 @@ fi
 
 f_cd_std(){
 
-if [ -d $std_directory ]
+if [ -d $hh_study_path ]
 then
-  cd $std_directory
+  cd $hh_study_path
   printf "${font_green}您已进入: ${cend}"
   pwd
   echo
@@ -91,17 +85,18 @@ fi
 
 # 创建学习目录
 f_mk_std(){
-if [ ! -d $pan ]
-then
-  echo "你的windows下没有D盘。您可以修改cmds/cd_directory.sh中pan的变量值，以更改新目录的位置"
-  return
-elif [ -d $std_directory ]
+if [ -d $hh_study_path ]
 then
   echo "该目录已存在，好好学习吧！"
   return
 else
-  mkdir -p $std_directory
-  printf "您已成功创建${font_green}$directory${cend}, 快去好好学习吧！ \n"
+  check_success=$(mkdir -p $hh_study_path)
+  if [[ -n $check_success ]]  # 需要检查盘符
+  then
+    printf "您已成功创建${font_green}$hh_study_path${cend}, 快去好好学习吧！ \n"
+  else
+    printf "创建失败：$check_success \n"
+  fi
 fi
 }
 
