@@ -75,7 +75,7 @@ fi
 
 # 外层if防止用户输入的命令>=系统支持的命令，但系统命令仍然会执行
 current_cmd="$main_hh $*" # 直接获取用户所有输入
-if [[ ${cmd_list1[*]} =~ $operate1 && ${cmd_list2} =~ $operate2 ]]
+if [[ ${cmd_list1[*]} =~ $operate1 && ${cmd_list2[*]} =~ $operate2 ]]
 then
 case $operate1 in
   # [1]进入目录
