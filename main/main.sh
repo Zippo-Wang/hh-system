@@ -1,5 +1,4 @@
 #!/bin/bash
-
 source $hh_project_path/main/index.sh
 source $hh_project_path/main/constants.sh
 
