@@ -118,7 +118,7 @@ f_delete(){
   fi
   done
 
-  if [[ ! ${#pod_array[@]} -eq 0 ]]; then for x in ${pod_array[@]}; do kubectl delete -f ${x} --force; done; fi;
+  if [[ ! ${#pod_array[@]} -eq 0 ]]; then for x in ${pod_array[@]}; do kubectl delete -f ${x}; done; fi;
   if [[ ! ${#pvc_array[@]} -eq 0 ]]; then for x in ${pvc_array[@]}; do kubectl delete -f ${x}; done; fi;
   if [[ ! ${#sc_array[@]} -eq 0 ]]; then for x in ${sc_array[@]}; do kubectl delete -f ${x}; done; fi;
   if [[ ! ${#pv_array[@]} -eq 0 ]]; then for x in ${pv_array[@]}; do kubectl delete -f ${x}; done; fi;
