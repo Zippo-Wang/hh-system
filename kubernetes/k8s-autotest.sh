@@ -3,10 +3,10 @@
 # usage example --------------------------------------------------------------------------------------------------------
 :<<EOF
 # 1.create
-sh main.sh create /root/obs
+sh k8s-autotest.sh create /root/obs
 
 # 2.delete
-sh main.sh delete /root/obs
+sh k8s-autotest.sh delete /root/obs
 EOF
 
 # 3.file name must be one of as follows:
