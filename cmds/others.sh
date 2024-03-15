@@ -57,6 +57,9 @@ f_help(){
   echo
 
   printf "${font_yellow1}【二】Main commands: ${cend}\n"
+  printf " ${font_green1}$go_mod${cend} \t     先后执行$go_mod_tidy和$go_mod_vendor \n"
+  echo
+
   printf " ${font_green1}$cd_hw${cend} \t     进入terraform-huaweicloud-provider目录\n"
   printf " ${font_green1}$cd_fd${cend} \t     进入terraform-flexibleengine-provider目录\n"
   printf " ${font_green1}$cd_gg${cend} \t     进入terraform-g42cloud-provider目录\n"
