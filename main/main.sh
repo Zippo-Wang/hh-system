@@ -6,6 +6,7 @@ source $hh_project_path/cmds/build_provider.sh
 source $hh_project_path/cmds/cd_directory.sh
 source $hh_project_path/cmds/others.sh
 source $hh_project_path/cmds/terraform.sh
+source $hh_project_path/cmds/gomod.sh
 
 source $hh_project_path/utils/auto_tab.sh
 source $hh_project_path/utils/color.sh
@@ -105,6 +106,8 @@ case $operate1 in
   $sys_version3) f_version;;
   $sys_charge1)  f_charge;;
   $sys_charge2)  f_charge;;
+  # go mod
+  $go_mod) f_go_mod;;
 
   # 公共
   $common_init) f_hh_init;;
