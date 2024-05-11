@@ -70,6 +70,7 @@ f_help(){
   printf " ${font_green1}$b_hw${cend}        build terraform-huaweicloud-provider，生成二进制文件\n"
   printf " ${font_green1}$b_fd${cend}        build terraform-flexibleengine-provider，生成二进制文件\n"
   printf " ${font_green1}$b_gg${cend}        build terraform-g42cloud-provider，生成二进制文件\n"
+  printf " ${font_green1}$b_pkr${cend}       build packer-plugin-huaweicloud，生成二进制文件\n"
   echo
 
   printf " ${font_green1}$common_tf $tf_init${cend}     执行$common_terraform $tf_init\n"
@@ -84,8 +85,8 @@ f_help(){
   echo
 
   printf "${font_yellow1}【三】System commands: ${cend}\n"
-  printf " ${font_green1}$sys_help2${cend}      查看hh-system帮助 \n"
-  printf " ${font_green1}$sys_version2${cend}   查看hh-system版本 \n"
+  printf " ${font_green1}$sys_help2${cend}      查看hh-system帮助，可以输入[$sys_help1 $sys_help2 $sys_help3] \n"
+  printf " ${font_green1}$sys_version2${cend}   查看hh-system版本 可以输入[$sys_version1 $sys_version2 $sys_version3 $sys_version4] \n"
   printf " ${font_green1}$sys_charge2${cend}    查看hh-system定价以及如何开通${font_yellow1}黄金会员${cend}、${font_cyan1}铂金会员${cend}、${font_red1}终身会员${cend} \n"
 }
 
