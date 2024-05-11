@@ -7,6 +7,7 @@ source $hh_project_path/cmds/cd_directory.sh
 source $hh_project_path/cmds/others.sh
 source $hh_project_path/cmds/terraform.sh
 source $hh_project_path/cmds/gomod.sh
+source $hh_project_path/cmds/packer.sh
 
 source $hh_project_path/utils/auto_tab.sh
 source $hh_project_path/utils/color.sh
@@ -92,20 +93,26 @@ case $operate1 in
     printf "${font_red}没有这个命令：${cend}$current_cmd\n"
   fi
   ;;
+  # [4] packer
+  $b_pkr) f_packer_build;;
 
-  # [4]其他
+  # [5]其他
   $o_cms)    f_christmas;;
   $o_monkey) f_monkey;;
   $o_meinv)  f_beautiful_girl;;
 
-  # [4]系统命令
+  # [6]系统命令
   $sys_help1)    f_help;;
   $sys_help2)    f_help;;
+  $sys_help3)    f_help;;
   $sys_version1) f_version;;
   $sys_version2) f_version;;
   $sys_version3) f_version;;
+  $sys_version4) f_version;;
   $sys_charge1)  f_charge;;
   $sys_charge2)  f_charge;;
+  $sys_charge3)  f_charge;;
+
   # go mod
   $go_mod) f_go_mod;;
 
