@@ -11,10 +11,10 @@ f_index(){
   echo '+'
 
   # 系统说明
-  printf "|${font_red}系统说明${cend}\033[0;32;5m🔔🔔🔔${cend} %-68s|\n"
+  printf "|${font_yellow1}系统说明${cend}\033[0;32;5m🔔🔔🔔${cend} %-68s|\n"
   printf "| 1、输入命令即可执行相应的动作 %-52s| \n"
-  printf "| 2、例如输入${font_red1}hh cd-hw${cend}, 即可进入tf-huaweicloud-provider目录 %-25s| \n"
-  printf "| 3、本页仅列出常用命令，请使用${font_red1}${main_hh} ${sys_help1} 查看全部命令 ${cend} %-31s|\n"
+  printf "| 2、例如输入${font_green1}hh cd-hw${cend}, 即可进入tf-huaweicloud-provider目录 %-25s| \n"
+  printf "| 3、本页仅列出常用命令，请使用${font_green1}${main_hh} ${sys_help1} 查看全部命令 ${cend} %-31s|\n"
   printf '+---%.0s' {1..21}
   echo '+'
 
