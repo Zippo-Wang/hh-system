@@ -8,6 +8,7 @@ source $hh_project_path/cmds/others.sh
 source $hh_project_path/cmds/terraform.sh
 source $hh_project_path/cmds/gomod.sh
 source $hh_project_path/cmds/packer.sh
+source $hh_project_path/cmds/check_upgrade.sh
 
 source $hh_project_path/utils/auto_tab.sh
 source $hh_project_path/utils/color.sh
@@ -49,10 +50,15 @@ then
   return
 fi
 
+# 检查更新
+msg=$(check_upgrade)
+return_code=$?
+if [[ ${return_code} == ${low_version} ]];then echo ${msg};
+elif [[ ${return_code} == ${high_version} ]]; then echo ${msg}; return; fi;
+
 # 判断hh后面是否有其他参数，没有就显示系统主界面，有就执行对应命令
 if [[ -n ${operate1} ]]
 then
-  printf "${font_yellow1}执行结果\033[0;33;5m🔊${cend}${cend}:"
   echo
 else
   f_index

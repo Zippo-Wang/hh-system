@@ -33,10 +33,19 @@ o_cms='cms'
 o_monkey='monkey'
 o_meinv='meinv'
 
+# [6] 更新
+sys_current_version='v2.0.1'
+check_upgrade='upgrade'
 
-# [6]系统命令
-sys_current_version='v2.0.2'
+low_version=101
+eq_version=102
+high_version=103
 
+owner='Zippo-Wang'
+repo='hh-system'
+
+
+# [7]系统命令
 sys_help1='help'
 sys_help2='-help'
 sys_help3='--help'
