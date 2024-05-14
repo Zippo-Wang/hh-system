@@ -59,7 +59,7 @@ elif [[ ${return_code} == ${high_version} ]]; then echo ${msg}; return; fi;
 # 判断hh后面是否有其他参数，没有就显示系统主界面，有就执行对应命令
 if [[ -n ${operate1} ]]
 then
-  echo
+  printf ""
 else
   f_index
 fi
