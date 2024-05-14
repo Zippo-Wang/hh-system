@@ -57,6 +57,15 @@ go_mod_vendor="go mod vendor"
 common_init='init'
 common_none=''
 
+# log level
+level_info="${bkd_green}[info]${cend}"
+level_warn="${bkd_yellow}[warn]${cend}"
+level_error="${bkd_red}[error]${cend}"
+
+#       ${level_info}
+#       ${level_warn}
+#       ${level_error}
+
 # 核心命令
 main_hh='hh'
 

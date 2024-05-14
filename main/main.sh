@@ -21,7 +21,7 @@ f_hh_init(){
   env_directory="/usr/share/bash-completion/bash_completion"  # 使脚本生效的目录
   if [ ! -d $script_directory ]
   then
-    echo "该目录不存在，您的Linux系统不支持hh-system。${script_directory}"
+    printf "${level_error}该目录不存在，您的Linux系统不支持hh-system。${script_directory} \n"
     return
   fi
 
@@ -30,9 +30,9 @@ f_hh_init(){
   then
     sudo cp $hh_project_path/utils/auto_tab.sh /etc/bash_completion.d/hh_auto_tab
     . $env_directory  # 刷新自动补全的环境配置，使立即生效
-    printf "${font_green}hh-system初始化成功，请重新打开终端窗口使配置生效！${cend}\n"
+    printf "${level_info}${font_green1}hh-system初始化成功，请重新打开终端窗口使配置生效！${cend}\n"
   else
-    printf "${font_red}sudo密码不正确，hh-system初始化失败！${cend}\n"
+    printf "${level_error}${font_red1}sudo密码不正确，hh-system初始化失败！${cend}\n"
   fi
 }
 
@@ -45,7 +45,7 @@ operate3=${3}
 # 判断第1个参数是否是hh
 if [[ ${main_hh} != ${hh_main} ]]
 then
-  printf "[ERROR]请参考Readme.md配置环境变量：\n"
+  printf "${level_error}请参考Readme.md配置环境变量 \n"
   return
 fi
 
@@ -87,10 +87,10 @@ case $operate1 in
       $tf_plan)     f_tf_plan;;
       $tf_apply)    f_tf_apply;;
       $tf_destroy)  f_tf_destroy;;
-      $common_none) printf "你输入的${font_red}命令不完整${cend}，你可能想使用：hh tf $tf_init/$tf_plan/$tf_apply/$tf_destroy \n";;
+      $common_none) printf "${level_warn}你输入的${font_red}命令不完整${cend}，你可能想使用：hh tf $tf_init/$tf_plan/$tf_apply/$tf_destroy \n";;
     esac
   else
-    printf "${font_red}没有这个命令：${cend}$current_cmd\n"
+    printf "${level_error}${font_red}没有这个命令：${cend}$current_cmd\n"
   fi
   ;;
   # [4] packer
@@ -121,7 +121,7 @@ case $operate1 in
   $common_none) ;;
 esac
 else
-  printf "${font_red}没有这个命令：${cend}$current_cmd \n"
+  printf "${level_error}${font_red}没有这个命令：${cend}$current_cmd \n"
 fi
 
 
