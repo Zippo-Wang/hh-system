@@ -67,9 +67,9 @@ common_init='init'
 common_none=''
 
 # log level
-level_info="${bkd_green}[info]${cend}"
-level_warn="${bkd_yellow}[warn]${cend}"
-level_error="${bkd_red}[error]${cend}"
+level_info="\033[0;30;42m[info]${cend}"
+level_warn="\033[0;30;43m[warn]${cend}"
+level_error="\033[0;30;41m[error]${cend}"
 
 
 # 核心命令
