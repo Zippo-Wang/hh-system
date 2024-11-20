@@ -75,7 +75,7 @@ then
   printf "${level_info}${font_green1}以下为该目录下所有文件夹/文件 ${cend}\n"
   ll
 else
-  printf "${level_warn}你还没有学习目录。好好学习，加油! \n"
+  printf "${level_warn}你还没有学习目录。好好学习, 加油! \n"
   printf "${level_info}是否在windows下创建学习目录：${font_red1}/D/DOCS/study ${cend}\n"
   printf "${level_info}是: ${font_red1}$main_hh $mk_std${cend}   否: 什么都不做 \n"
 fi
@@ -85,7 +85,7 @@ fi
 f_mk_std(){
 if [ -d $hh_study_path ]
 then
-  echo "${level_warn}该目录已存在，好好学习吧！"
+  echo "${level_warn}该目录已存在, 好好学习吧！"
   return
 else
   check_success=$(mkdir -p $hh_study_path)

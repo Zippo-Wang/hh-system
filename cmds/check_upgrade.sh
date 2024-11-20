@@ -15,10 +15,10 @@ check_upgrade(){
     if [[ ${lat_v} == "" ]]; then return ${eq_version}; fi;
 
     if version_lt ${cur_v} ${lat_v}; then
-       echo -e "${level_warn}${font_yellow1}当前版本号:${cur_v}，最新版本号:${lat_v}，建议更新获取最新功能! ${cend} \n"
+       echo -e "${level_warn}${font_yellow1}当前版本号:${cur_v}, 最新版本号:${lat_v}, 建议更新获取最新功能! ${cend} \n"
        return ${low_version}
     elif version_gt ${cur_v} ${lat_v}; then
-       echo -e "${level_error}${font_red1}当前版本号:${cur_v}，最新版本号:${lat_v}，请勿修改版本号! 建议立即更新! ${cend} \n"
+       echo -e "${level_error}${font_red1}当前版本号:${cur_v}, 最新版本号:${lat_v}, 请勿修改版本号! 建议立即更新! ${cend} \n"
        return ${high_version}
     else
        echo -e "${level_info}${font_green1}版本号相同${cend} \n"

@@ -22,18 +22,18 @@ f_hh_init(){
   env_directory="/usr/share/bash-completion/bash_completion"  # 使脚本生效的目录
   if [ ! -d $script_directory ]
   then
-    printf "${level_error}该目录不存在，您的Linux系统不支持hh-system。${script_directory} \n"
+    printf "${level_error}该目录不存在, 您的Linux系统不支持hh-system。${script_directory} \n"
     return
   fi
 
-  # 如果支持，就写入自动补全脚本
+  # 如果支持, 就写入自动补全脚本
   if sudo -v &>/dev/null;
   then
     sudo cp $hh_project_path/utils/auto_tab.sh /etc/bash_completion.d/hh_auto_tab
-    . $env_directory  # 刷新自动补全的环境配置，使立即生效
-    printf "${level_info}${font_green1}hh-system初始化成功，请重新打开终端窗口使配置生效！${cend}\n"
+    . $env_directory  # 刷新自动补全的环境配置, 使立即生效
+    printf "${level_info}${font_green1}hh-system初始化成功, 请重新打开终端窗口使配置生效！${cend}\n"
   else
-    printf "${level_error}${font_red1}sudo密码不正确，hh-system初始化失败！${cend}\n"
+    printf "${level_error}${font_red1}sudo密码不正确, hh-system初始化失败！${cend}\n"
   fi
 }
 
@@ -51,12 +51,12 @@ then
 fi
 
 # 检查更新
-msg=$(check_upgrade)
-return_code=$?
-if [[ ${return_code} == ${low_version} ]];then echo ${msg};
-elif [[ ${return_code} == ${high_version} ]]; then echo ${msg}; return; fi;
+# msg=$(check_upgrade)
+# return_code=$?
+# if [[ ${return_code} == ${low_version} ]];then echo ${msg};
+# elif [[ ${return_code} == ${high_version} ]]; then echo ${msg}; return; fi;
 
-# 判断hh后面是否有其他参数，没有就显示系统主界面，有就执行对应命令
+# 判断hh后面是否有其他参数, 没有就显示系统主界面, 有就执行对应命令
 if [[ -n ${operate1} ]]
 then
   printf ""
@@ -65,7 +65,7 @@ else
 fi
 
 
-# 外层if防止用户输入的命令>=系统支持的命令，但系统命令仍然会执行
+# 外层if防止用户输入的命令>=系统支持的命令, 但系统命令仍然会执行
 current_cmd="$main_hh $*" # 获取用户所有输入
 if [[ ${cmd_list1[*]} =~ $operate1 && ${cmd_list2[*]} =~ $operate2 ]]
 then
@@ -85,20 +85,11 @@ case $operate1 in
   $b_gg) f_build_g42cloud;;
 
   # [3]terraform
-  $common_tf)
-  if [[ ! ${operate3} ]]  # 确保init/plan等命令后没有其他参数
-  then
-    case $operate2 in
-      $tf_init)     f_tf_init;;
-      $tf_plan)     f_tf_plan;;
-      $tf_apply)    f_tf_apply;;
-      $tf_destroy)  f_tf_destroy;;
-      $common_none) printf "${level_warn}你输入的${font_red}命令不完整${cend}，你可能想使用：hh tf $tf_init/$tf_plan/$tf_apply/$tf_destroy \n";;
-    esac
-  else
-    printf "${level_error}${font_red}没有这个命令：${cend}$current_cmd\n"
-  fi
-  ;;
+  $tf_init)    f_tf_init ;;             # init 后面不加参数
+  $tf_plan)    f_tf_plan ${operate2};;
+  $tf_apply)   f_tf_apply ${operate2};;
+  $tf_destroy) f_tf_destroy ${operate2};;
+
   # [4] packer
   $b_pkr) f_packer_build;;
 
