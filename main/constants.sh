@@ -19,10 +19,19 @@ b_pkr='b-pkr'
 # [3]terraform
 common_tf='tf'
 common_terraform='terraform'
-tf_init='init'
-tf_plan='plan'
-tf_apply='apply'
-tf_destroy='destroy'
+common_var_file='-var-file'
+terraform_init='init'
+terraform_plan='plan'
+terraform_apply='apply'
+terraform_destroy='destroy'
+
+tf_init='tfi'
+tf_plan='tfp'
+tf_apply='tfa'
+tf_destroy='tfd'
+
+tf_var_file='-var'
+
 
 # [4]packer
 p_mv='p-mv'
@@ -34,7 +43,7 @@ o_monkey='monkey'
 o_meinv='meinv'
 
 # [6] 更新
-sys_current_version='v2.0.1'
+sys_current_version='v2.1.3'
 check_upgrade='upgrade'
 
 low_version=101
@@ -83,9 +92,10 @@ cmd_list1=(\
   $sys_version1 $sys_version2 $sys_version3 $sys_version4\
   $common_tf $common_init \
   $go_mod \
-  $b_pkr
+  $b_pkr \
+  $tf_init $tf_plan $tf_apply $tf_destroy
 )
 
 cmd_list2=(\
-  $tf_init $tf_plan $tf_apply $tf_destroy \
+  $tf_var_file \
 )
