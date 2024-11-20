@@ -24,11 +24,13 @@ terraform_init='init'
 terraform_plan='plan'
 terraform_apply='apply'
 terraform_destroy='destroy'
+terraform_refresh='refresh'
 
 tf_init='tfi'
 tf_plan='tfp'
 tf_apply='tfa'
 tf_destroy='tfd'
+tf_refresh='tfr'
 
 tf_var_file='-var'
 
@@ -93,7 +95,7 @@ cmd_list1=(\
   $common_tf $common_init \
   $go_mod \
   $b_pkr \
-  $tf_init $tf_plan $tf_apply $tf_destroy
+  $tf_init $tf_plan $tf_apply $tf_destroy $tf_refresh
 )
 
 cmd_list2=(\
