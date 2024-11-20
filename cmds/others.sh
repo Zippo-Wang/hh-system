@@ -73,11 +73,13 @@ f_help(){
   printf " ${font_green1}$b_pkr${cend}       build packer-plugin-huaweicloud, 生成二进制文件, 并放到PATH目录下\n"
   echo
 
-  printf " ${font_yellow1}说明${cend} $tf_plan、$tf_apply、$tf_destroy后面可跟${tf_var_file}, 例如$common_tf $tf_plan $tf_var_file, 需要配置环境变量${font_green1}hh_tf_var_file_name=xxx.json ${cend}\n"
-  printf " ${font_green1}$common_tf $tf_init${cend}      执行$common_terraform $tf_init\n"
-  printf " ${font_green1}$common_tf $tf_plan${cend}      执行$common_terraform $tf_plan\n"
-  printf " ${font_green1}$common_tf $tf_apply${cend}      执行$common_terraform $tf_apply, 且${font_blue1}无需输入yes + Enter${cend}\n"
-  printf " ${font_green1}$common_tf $tf_destroy${cend}      执行$common_terraform $tf_destroy, 且${font_blue1}无需输入yes + Enter${cend}\n"
+  printf " ${font_yellow1}说明${cend} $tf_plan、$tf_apply、$tf_destroy、$tf_refresh后面可跟${tf_var_file}, 需要配置环境变量${font_green1}hh_tf_var_file_name=xxx.json ${cend}\n"
+  printf " 例如 ${font_green1}$main_hh $tf_plan $tf_var_file${cend}, 相当于执行${font_green1}${common_terraform} ${terraform_plan} -var-file=variables.json${cend} \n"
+  printf " ${font_green1}$tf_init${cend}   \t     执行$common_terraform ${terraform_init}\n"
+  printf " ${font_green1}$tf_plan${cend}   \t     执行$common_terraform ${terraform_plan}\n"
+  printf " ${font_green1}$tf_apply${cend}  \t     执行$common_terraform ${terraform_apply}, 且${font_blue1}无需输入yes + Enter${cend}\n"
+  printf " ${font_green1}$tf_destroy${cend} \t     执行$common_terraform ${terraform_destroy}, 且${font_blue1}无需输入yes + Enter${cend}\n"
+  printf " ${font_green1}$tf_refresh${cend} \t     执行$common_terraform ${terraform_refresh} \n"
   echo
 
   printf " ${font_green1}$o_cms${cend}         圣诞快乐！\n"

@@ -7,7 +7,7 @@
 _hh_auto_tab(){
   opts1="cd-hw cd-fd cd-gg cd-loc cd-std b-hw b-fd b-gg
   mk-std
-  tfi tfp tfa tfd
+  tfi tfp tfa tfd tfr
   cms monkey meinv init
   help -help --help charge -charge --charge
   -v version -version --version
@@ -19,7 +19,7 @@ _hh_auto_tab(){
 	1)
 		COMPREPLY=($(compgen -W "${opts1}" -- ${COMP_WORDS[COMP_CWORD]}));;
 	2)
-		if [[ ${COMP_WORDS[1]} == "tfp" || ${COMP_WORDS[1]} == "tfa" || ${COMP_WORDS[1]} == "tfd" ]];
+		if [[ ${COMP_WORDS[1]} == "tfp" || ${COMP_WORDS[1]} == "tfa" || ${COMP_WORDS[1]} == "tfd" || ${COMP_WORDS[1]} == "tfr" ]];
 		then
 		  COMPREPLY=($(compgen -W "${opts2}" -- ${COMP_WORDS[COMP_CWORD]}))
 		fi

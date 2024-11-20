@@ -89,6 +89,7 @@ case $operate1 in
   $tf_plan)    f_tf_plan ${operate2};;
   $tf_apply)   f_tf_apply ${operate2};;
   $tf_destroy) f_tf_destroy ${operate2};;
+  $tf_refresh) f_tf_refresh ${operate2};;
 
   # [4] packer
   $b_pkr) f_packer_build;;
