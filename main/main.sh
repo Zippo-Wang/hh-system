@@ -6,7 +6,7 @@ source $hh_project_path/cmds/build_provider.sh
 source $hh_project_path/cmds/cd_directory.sh
 source $hh_project_path/cmds/others.sh
 source $hh_project_path/cmds/terraform.sh
-source $hh_project_path/cmds/gomod.sh
+source $hh_project_path/cmds/auxiliary_function.sh
 source $hh_project_path/cmds/packer.sh
 source $hh_project_path/cmds/check_upgrade.sh
 
