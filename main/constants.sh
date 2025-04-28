@@ -35,8 +35,10 @@ tf_refresh='tfr'
 tf_var_file='-var'
 
 
-# [4]packer
-p_mv='p-mv'
+# [4]k8s
+p_mv='p-mv' # 忘了这个是干嘛的了
+gci_csi="gci-csi"   # sort import顺序
+gci_ccm="gci-ccm"   # sort import顺序
 
 
 # [5]其他
@@ -95,7 +97,7 @@ cmd_list1=(\
   $common_tf $common_init \
   $go_mod \
   $b_pkr \
-  $tf_init $tf_plan $tf_apply $tf_destroy $tf_refresh
+  $tf_init $tf_plan $tf_apply $tf_destroy $tf_refresh \
 )
 
 cmd_list2=(\

@@ -80,9 +80,10 @@ case $operate1 in
   $mk_std) f_mk_std;;
 
   # [2]执行build
-  $b_hw) f_build_huaweicloud;;
-  $b_fd) f_build_flexibleengine;;
-  $b_gg) f_build_g42cloud;;
+  $b_hw)  f_build_huaweicloud;;
+  $b_fd)  f_build_flexibleengine;;
+  $b_gg)  f_build_g42cloud;;
+  $b_pkr) f_packer_build;;
 
   # [3]terraform
   $tf_init)    f_tf_init ;;             # init 后面不加参数
@@ -91,8 +92,9 @@ case $operate1 in
   $tf_destroy) f_tf_destroy ${operate2};;
   $tf_refresh) f_tf_refresh ${operate2};;
 
-  # [4] packer
-  $b_pkr) f_packer_build;;
+  # [4]kubernetes
+  # $gci_csi) f_gci ${operate2};;
+  # $gci_ccm) f_gci ${operate2};;
 
   # [5]其他
   $o_cms)    f_christmas;;
